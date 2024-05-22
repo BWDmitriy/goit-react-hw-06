@@ -1,16 +1,21 @@
-export default function Searchbox({ searchQuery, setSearchQuery }) {
- const handleChange = (event) => {
-    setSearchQuery(event.target.value);
- };
+// Searchbox.jsx
+import { useDispatch } from 'react-redux';
+import { changeFilter } from '../../redux/filtersSlice';
 
- return (
+export default function Searchbox() {
+  const dispatch = useDispatch();
+
+  const handleChange = (event) => {
+    dispatch(changeFilter(event.target.value));
+  };
+
+  return (
     <div className="search-box">
       <input
         type="text"
         placeholder="Search..."
-        value={searchQuery}
         onChange={handleChange}
       />
     </div>
- );
+  );
 }

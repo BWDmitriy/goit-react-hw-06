@@ -1,11 +1,12 @@
 // src/redux/contactsSlice.js
+
 import {
     createSlice,
     PayloadAction
 } from '@reduxjs/toolkit';
 
-interface ContactsState {
-    items: any[];
+const ContactsState = {
+    items: []
 }
 
 const initialState: ContactsState = {

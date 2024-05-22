@@ -6,20 +6,8 @@ import {
 import {
     devToolsEnhancer
 } from "@redux-devtools/extension";
+import rootReducer from './rootReducer'; // Переконайтеся, що ви імпортуєте rootReducer
 
-const initialState = {
-    contacts: {
-        items: []
-    },
-    filters: {
-        name: ""
-    }
-};
+const store = createStore(rootReducer, devToolsEnhancer());
 
-const rootReducer = (state = initialState, action) => {
-    return state;
-};
-
-// Створюємо розширення стора, щоб додати інструменти розробника
-const enhancer = devToolsEnhancer();
-export const store = createStore(rootReducer, enhancer);
+export default store;
