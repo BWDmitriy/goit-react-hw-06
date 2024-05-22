@@ -1,16 +1,25 @@
 // src/redux/store.js
+
 import {
-    configureStore
-} from '@reduxjs/toolkit';
-import contactsReducer from './contactsSlice';
-import filtersReducer from './filtersSlice';
+    createStore
+} from "redux";
+import {
+    devToolsEnhancer
+} from "@redux-devtools/extension";
 
-export const store = configureStore({
-    reducer: {
-        contacts: contactsReducer,
-        filters: filtersReducer,
+const initialState = {
+    contacts: {
+        items: []
     },
-});
+    filters: {
+        name: ""
+    }
+};
 
-export type RootState = ReturnType < typeof store.getState > ;
-export type AppDispatch = typeof store.dispatch;
+const rootReducer = (state = initialState, action) => {
+    return state;
+};
+
+// Створюємо розширення стора, щоб додати інструменти розробника
+const enhancer = devToolsEnhancer();
+export const store = createStore(rootReducer, enhancer);
