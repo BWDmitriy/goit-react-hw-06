@@ -1,5 +1,3 @@
-// App.jsx
-import React from 'react';
 import { Provider } from 'react-redux';
 import store from '../../redux/store'; // Import the default export
 import ContactForm from '../ContactForm/ContactForm';

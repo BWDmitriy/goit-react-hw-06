@@ -1,4 +1,5 @@
 // ContactForm.jsx
+
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
@@ -8,13 +9,13 @@ const ContactForm = () => {
   const dispatch = useDispatch();
   const validationSchema = Yup.object({
     name: Yup.string()
-     .min(3, 'Minimum 3 characters')
-     .max(50, 'Maximum 50 characters')
-     .required('Required'),
+      .min(3, 'Minimum 3 characters')
+      .max(50, 'Maximum 50 characters')
+      .required('Required'),
     number: Yup.string()
-     .min(3, 'Minimum 3 characters')
-     .max(50, 'Maximum 50 characters')
-     .required('Required'),
+      .min(3, 'Minimum 3 characters')
+      .max(50, 'Maximum 50 characters')
+      .required('Required'),
   });
 
   return (
