@@ -1,13 +1,16 @@
 // src/redux/store.js
 
 import {
-    createStore
-} from "redux";
-import {
-    devToolsEnhancer
-} from "@redux-devtools/extension";
-import rootReducer from './rootReducer'; // Переконайтеся, що ви імпортуєте rootReducer
+    configureStore
+} from '@reduxjs/toolkit';
+import contactsReducer from './contactsSlice';
+import filtersReducer from './filtersSlice';
 
-const store = createStore(rootReducer, devToolsEnhancer());
+const store = configureStore({
+    reducer: {
+        contacts: contactsReducer,
+        filters: filtersReducer,
+    },
+});
 
 export default store;
