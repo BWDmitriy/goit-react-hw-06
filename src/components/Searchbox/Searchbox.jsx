@@ -1,5 +1,3 @@
-// Searchbox.jsx
-
 import { useDispatch } from 'react-redux';
 import { changeFilter } from '../../redux/filtersSlice';
 
